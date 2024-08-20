@@ -3,7 +3,8 @@ import React from "react";
 function Question({ question, questionIndex, onAnswerChange, selectedAnswer }) {
   return (
     <div className="question">
-      <h3>{question.question}</h3>
+    
+      <h3 className="text-xl font-semibold" >{question.question}</h3>
       <ul>
         {question.options.map((option, index) => (
           <li key={index}>

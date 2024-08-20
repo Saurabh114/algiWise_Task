@@ -3,6 +3,10 @@ import WebcamCapture from "./../CameraAccess/CameraAccess";
 import MicrophoneCapture from "./../MicroPhone/MicroPhone";
 
 function Dashboard({ onSelectCategory, selectedCategory }) {
+
+  console.log({ selectedCategory});
+  
+
   return (
     <div className="dashboard">
       <div className="sidebar">

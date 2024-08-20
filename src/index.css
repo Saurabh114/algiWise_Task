@@ -22,7 +22,7 @@ body {
 }
 
 .sidebar {
-  width: 280px;
+  width: 20%;
   background-color: #002850;
   color: white;
   padding: 20px;
@@ -101,4 +101,49 @@ button:hover {
 
 .webcam {
   padding: 40px 40px 0 0;
+  width: 35%;
+}
+
+.question-list {
+  margin-top: 20px;
+  overflow-y: auto;
+  display: block;
+}
+
+@media (max-width: 1000px) {
+  .dashboard{
+    display: block ;
+  }
+
+  .sidebar {
+    width: 100%;
+    display: block;
+  }
+
+  .sidebar ul {
+    display: flex;
+    margin: 10px 0;
+    flex-wrap: wrap;
+  }
+
+  .exam-container {
+    width: 100%;
+    display: block;
+  }
+
+  .question-area {
+    width: 100%;
+  }
+
+  .webcam {
+    display: none;
+  }
+
+  .question-list {
+    margin-top: 20px;
+    overflow-y: auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 6px;
+}
 }

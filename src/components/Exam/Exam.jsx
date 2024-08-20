@@ -9,9 +9,7 @@ function Exam({ questions, onSubmit }) {
   const [timeRemaining, setTimeRemaining] = useState(3600); // 1 hour in seconds
   const [isSubmitted, setIsSubmitted] = useState(false);
 
-  const allQuestions = [
-    ...questions,
-  ];
+  const allQuestions = [...questions];
 
   useEffect(() => {
     const timerInterval = setInterval(() => {
@@ -69,16 +67,16 @@ function Exam({ questions, onSubmit }) {
       <div className="sidebar">
         <div className="clock-container">
           <div className="time-remaining">
-            {formatRemainingTime()} remaining 
+            {formatRemainingTime()} remaining
           </div>
         </div>
         <div className="question-list">
           {allQuestions.map((question, index) => (
             <div
               key={index}
-              className={`question-item ${
-                answers[index] ? "answered" : ""
-              } ${currentQuestionIndex === index ? "active" : ""}`}
+              className={`question-item ${answers[index] ? "answered" : ""} ${
+                currentQuestionIndex === index ? "active" : ""
+              }`}
               onClick={() => handleQuestionSelect(index)}
             >
               Question {index + 1}
@@ -86,10 +84,16 @@ function Exam({ questions, onSubmit }) {
           ))}
         </div>
         <div className="questionGurid mt-8">
-          <h3 className="text-xl font-semibold mb-4 text-center" >Question Guidline</h3>
-          <div className="question-item">Not Answered Question</div>
-          <div className="question-item answered"> Answered  </div>
-          <div className="question-item answered active" > Current Question  </div>
+          <h3 className="text-xl font-semibold mb-4 text-center">
+            Question Guidline
+          </h3>
+          <div className="question-list">
+            <div className="question-item">Not Answered Question</div>
+            <div className="question-item answered"> Answered </div>
+            <div className="question-item answered active">
+              Current Question
+            </div>
+          </div>
         </div>
       </div>
       <div className="question-area">
@@ -102,7 +106,10 @@ function Exam({ questions, onSubmit }) {
               selectedAnswer={answers[currentQuestionIndex]}
             />
             <div className="navigation-buttons">
-              <button onClick={handlePreviousQuestion} disabled={currentQuestionIndex <= 0}>
+              <button
+                onClick={handlePreviousQuestion}
+                disabled={currentQuestionIndex <= 0}
+              >
                 Previous
               </button>
               {currentQuestionIndex < allQuestions.length - 1 ? (
